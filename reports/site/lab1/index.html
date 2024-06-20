@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>lab1 - Samarov Ilya</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "lab1";
+        var mkdocs_page_input_path = "lab1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Samarov Ilya
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" title="Введите поисковый запрос" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Навигационное меню">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">lab1</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Цель работы:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Задание</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">Текст задания:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">Ссылка на практики</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Ход Работы:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">Вывод</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../lab2/">lab2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../lab3/">lab3</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Мобильная версия навигации">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Samarov Ilya</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Документация"></a></li>
+      <li class="breadcrumb-item active">lab1</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="no1">Отчет по лабораторной работе №1</h1>
+<h4 id="_1">Цель работы:</h4>
+<p>Научится реализовывать полноценное серверное приложение с помощью фреймворка FastAPI с применением дополнительных средств и библиотек.</p>
+<h2 id="_2">Задание</h2>
+<h4 id="_3">Текст задания:</h4>
+<ol>
+<li>Выполнить практики 2.1-2.3 Их можно реализовать на примере, приведенном в текстах практик или используя выбранную тему. Практики можно предоставить в любом из ниже приведенных вариантов:
+   a. Каждая практика - отдельная папка в репозитории.
+   b. Каждая практика - отдельная ветка в репозитории.
+   c. Каждая практика - отдельный коммит в репозитории.</li>
+<li>Задание на 9 Баллов: Реализовать на основании выбранной модели с помощью инструкций из практик серверное приложение на FastAPI. Оно должно включать в себя:
+   a. Таблицы, реализованные с помощью ORM SQLAlchemy или SQLModel с использованием БД PostgreSQL.
+   b. API, содержащее CRUD-ы. Там где это необходимо, реализовать GET-запросы возвращающие модели с вложенными объектами (связи many-to-many и one-to-many).
+   c. Настроенную систему миграций с помощью библиотеки Alembic.
+   d. Аннотацию типов в передаваемых и возвращаемых значениях в API-методах.
+   e. Оформленную файловую структуру проекта с разделением кода, отвечающего за разную бизнес-логику и предметную область, на отдельные файлы и папки.
+   f. (опционально) Комментарии к сложным частям кода.</li>
+<li>Задание на 15 Баллов (можно реализовывать сразу): Необходимо реализовать функционал пользователя в разрабатываемом приложении. Функционал включает в себя:
+   a. Авторизацию и регистрацию
+   b. Генерацию JWT-токенов
+   c. Аутентификацию по JWT-токену
+   d. Хэширование паролей
+   e. Дополнительные АПИ-методы для получения информации о пользователе, списка пользователей и смене пароля</li>
+</ol>
+<h4 id="_4">Ссылка на практики</h4>
+<p><a href="https://github.com/Ilya3716/ITMO_ICT_WebDevelopment_tools_2023-2024/tree/lab-1/students/k33402/Samarov_Ilya">https://github.com/Ilya3716/ITMO_ICT_WebDevelopment_tools_2023-2024/tree/lab-1/students/k33402/Samarov_Ilya</a></p>
+<h4 id="_5">Ход Работы:</h4>
+<p>Для начала определим структуру проекта, были выделены несколько сущностей:</p>
+<ol>
+<li>endpoints(auth_endpoints, user_endpoints, location_endpoints, travel_endpoints) - для обработки запросов</li>
+<li>models - для хранения проекта</li>
+<li>отдельный файлы такие как, main, auth, database</li>
+</ol>
+<p>На первом шаге инициализируем приложение и подключаем базу данных:</p>
+<p>main.py</p>
+<hr>
+
+<pre><code>from fastapi import FastAPI
+import uvicorn
+from database import init_db
+from location_endpoints import location_router
+from travel_endpoints import travel_router
+from auth_endpoints import auth_router
+from user_endpoints import user_router
+
+
+app = FastAPI()
+
+app.include_router(location_router, prefix=&quot;/api/locations&quot;, tags=[&quot;locations&quot;])
+app.include_router(travel_router, prefix=&quot;/api/travels&quot;, tags=[&quot;travels&quot;])
+app.include_router(auth_router, prefix=&quot;/api&quot;, tags=[&quot;auth&quot;])
+app.include_router(user_router, prefix=&quot;/api/users&quot;, tags=[&quot;users&quot;])
+
+
+@app.on_event(&quot;startup&quot;)
+def on_startup():
+    init_db()
+
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host=&quot;localhost&quot;, port=8000, reload=True)
+</code></pre>
+<p>database.py</p>
+<pre><code>from sqlmodel import SQLModel, Session, create_engine
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+engine = create_engine(os.getenv('DB_URL'), echo=True)
+
+
+def init_db():
+    SQLModel.metadata.create_all(engine)
+
+
+def get_session():
+    with Session(engine) as session:
+        yield session
+</code></pre>
+<p>Для авторизации используются jwt токены</p>
+<p>auth.py</p>
+<hr>
+
+<pre><code>import datetime
+from fastapi import Security, HTTPException, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from passlib.context import CryptContext
+import jwt
+from starlette import status
+from database import get_session
+from models import User
+from sqlmodel import select
+
+security = HTTPBearer()
+pwd_context = CryptContext(schemes=['bcrypt'])
+secret_key = 'supersecret'
+
+
+def get_password_hash(password):
+    return pwd_context.hash(password)
+
+
+def verify_password(password, hashed_password):
+    return pwd_context.verify(password, hashed_password)
+
+
+def encode_token(user_id):
+    payload = {
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=8),
+        'iat': datetime.datetime.utcnow(),
+        'sub': user_id
+    }
+    return jwt.encode(payload, secret_key, algorithm='HS256')
+
+
+def decode_token(token):
+    try:
+        payload = jwt.decode(token, secret_key, algorithms=['HS256'])
+        return payload['sub']
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=401, detail='Expired signature')
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail='Invalid token')
+
+
+def auth_wrapper(auth: HTTPAuthorizationCredentials = Security(security)):
+    return decode_token(auth.credentials)
+
+
+def get_current_user(auth: HTTPAuthorizationCredentials = Security(security), session=Depends(get_session)):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail='Could not validate credentials'
+    )
+    username = decode_token(auth.credentials)
+    if username is None:
+        raise credentials_exception
+    user = session.exec(select(User).where(User.username == username)).first()
+    if user is None:
+        raise credentials_exception
+    return user
+
+</code></pre>
+<p>Были созданы все необходимые модели</p>
+<p>models.py</p>
+<hr>
+
+<pre><code>import datetime
+from pydantic import BaseModel
+from enum import Enum
+from typing import Optional, List
+from sqlmodel import SQLModel, Field, Relationship
+
+
+class TypeOfTravel(Enum):
+    elite_hotel = &quot;elite_hotel&quot;
+    pretty_simple_hotel = &quot;pretty_simple_hotel&quot;
+    apartments = &quot;apartments&quot;
+    tents = &quot;tents&quot;
+
+
+class PlaceRating(Enum):
+    five = '5'
+    four = '4'
+    three = '3'
+    two = '2'
+    one = '1'
+    zero = '0'
+
+
+class PlaceBase(SQLModel):
+    name: str
+    description: str
+    place_rating: PlaceRating
+    area_id: Optional[int] = Field(default=None, foreign_key=&quot;area.id&quot;)
+
+
+class PlaceShow(PlaceBase):
+    area: Optional[&quot;Area&quot;] = None
+
+
+class Place(PlaceBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+    area: Optional[&quot;Area&quot;] = Relationship(back_populates=&quot;places&quot;)
+
+
+class AreaBase(SQLModel):
+    name: str
+    description: str
+
+
+class AreaShow(AreaBase):
+    places: Optional[List[&quot;Place&quot;]] = None
+
+
+class Area(AreaBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+    places: Optional[List[&quot;Place&quot;]] = Relationship(back_populates=&quot;area&quot;,
+                                                   sa_relationship_kwargs={
+                                                       &quot;cascade&quot;: &quot;all, delete&quot;,
+                                                   }
+                                                   )
+    from_location: Optional[&quot;Travel&quot;] = Relationship(back_populates=&quot;location_from&quot;,
+                                                     sa_relationship_kwargs=
+                                                     dict(foreign_keys=&quot;[Travel.location_from_id]&quot;),
+                                                     )
+
+    to_location: Optional[&quot;Travel&quot;] = Relationship(back_populates=&quot;location_to&quot;,
+                                                   sa_relationship_kwargs=
+                                                   dict(foreign_keys=&quot;[Travel.location_from_id]&quot;),
+                                                   )
+
+class TravelTogetherBase(SQLModel):
+    comment: str
+    travel_id: Optional[int] = Field(default=None, foreign_key=&quot;travel.id&quot;)
+    traveller_id: Optional[int] = Field(default=None, foreign_key=&quot;user.id&quot;)
+
+
+class TravelTogetherShow(TravelTogetherBase):
+    travels: Optional[&quot;Travel&quot;] = None
+    travellers: Optional[&quot;User&quot;] = None
+
+
+class TravelTogether(TravelTogetherBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+    travels: Optional[&quot;Travel&quot;] = Relationship(back_populates=&quot;traveltogethers&quot;)
+    travellers: Optional[&quot;User&quot;] = Relationship(back_populates=&quot;traveltogethers&quot;)
+
+
+class TravelBase(SQLModel):
+    location_from_id: Optional[int] = Field(default=None, foreign_key=&quot;area.id&quot;)
+    location_to_id: Optional[int] = Field(default=None, foreign_key=&quot;area.id&quot;)
+    path_description: str
+    date_start:  datetime.datetime
+    date_end:  datetime.datetime
+    type_of_travel: TypeOfTravel
+
+
+class TravelShow(TravelBase):
+    location_from: Optional[&quot;Area&quot;] = None
+    location_to: Optional[&quot;Area&quot;] = None
+
+
+class Travel(TravelBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+    location_from: Optional[&quot;Area&quot;] = Relationship(back_populates=&quot;from_location&quot;,
+                                                   sa_relationship_kwargs=
+                                                   dict(foreign_keys=&quot;[Travel.location_from_id]&quot;),
+                                                   )
+    location_to: Optional[&quot;Area&quot;] = Relationship(back_populates=&quot;to_location&quot;,
+                                                 sa_relationship_kwargs=
+                                                 dict(foreign_keys=&quot;[Travel.location_to_id]&quot;),
+                                                 )
+
+    travellers: Optional[List[&quot;User&quot;]] = Relationship(
+        back_populates=&quot;travels&quot;, link_model=TravelTogether
+    )
+    traveltogethers: Optional[List[&quot;TravelTogether&quot;]] = Relationship(back_populates=&quot;travels&quot;)
+
+
+class UserBase(SQLModel):
+    username: str
+    password: str
+
+
+class UserShow(UserBase):
+    travels: Optional[List[&quot;Travel&quot;]] = None
+    traveltogethers: Optional[List[&quot;TravelTogether&quot;]] = None
+
+
+class User(UserBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+    travels: Optional[List[&quot;Travel&quot;]] = Relationship(
+        back_populates=&quot;travellers&quot;, link_model=TravelTogether
+    )
+    traveltogethers: Optional[List[&quot;TravelTogether&quot;]] = Relationship(back_populates=&quot;travellers&quot;)
+
+
+class ChangePassword(SQLModel):
+    old_password: str
+    new_password: str
+
+</code></pre>
+<p>Далее были реализованы эндпойнты для работы с API</p>
+<p>auth_endpoints</p>
+<hr>
+
+<pre><code>@auth_router.post('/registration', status_code=201, description='Register new user')
+def register(user: UserBase, session=Depends(get_session)):
+    users = session.exec(select(User)).all()
+    if any(x.username == user.username for x in users):
+        raise HTTPException(status_code=400, detail='Username is taken')
+    hashed_pwd = get_password_hash(user.password)
+    user = User(username=user.username, password=hashed_pwd)
+    session.add(user)
+    session.commit()
+    return {&quot;status&quot;: 201, &quot;message&quot;: &quot;Created&quot;}
+
+
+@auth_router.post('/login')
+def login(user: UserBase, session=Depends(get_session)):
+    user_found = session.exec(select(User).where(User.username == user.username)).first()
+    if not user_found:
+        raise HTTPException(status_code=401, detail='Invalid username and/or password')
+    verified = verify_password(user.password, user_found.password)
+    if not verified:
+        raise HTTPException(status_code=401, detail='Invalid username and/or password')
+    token = encode_token(user_found.username)
+    return {'token': token}
+
+
+@auth_router.get('/me', response_model=UserShow)
+def get_current_user(user: User = Depends(get_current_user)) -&gt; User:
+    return user
+
+
+@auth_router.patch(&quot;/me/change-password&quot;)
+def user_pwd(user_pwd: ChangePassword, session=Depends(get_session), current=Depends(get_current_user)):
+    found_user = session.get(User, current.id)
+    if not found_user:
+        raise HTTPException(status_code=404, detail=&quot;User not found&quot;)
+    verified = verify_password(user_pwd.old_password, found_user.password)
+    if not verified:
+        raise HTTPException(status_code=400, detail=&quot;Invalid old password&quot;)
+    hashed_pwd = get_password_hash(user_pwd.new_password)
+    found_user.password = hashed_pwd
+    session.add(found_user)
+    session.commit()
+    session.refresh(found_user)
+    return {&quot;status&quot;: 200, &quot;message&quot;: &quot;password changed successfully&quot;}
+</code></pre>
+<p>user_endpoints</p>
+<hr>
+
+<pre><code>@user_router.get(&quot;/users/list&quot;)
+def user_list(session=Depends(get_session)) -&gt; list[User]:
+    users = session.exec(select(User)).all()
+    user_models = [user.model_dump(exclude={'password'}) for user in users]
+    return user_models
+
+
+@user_router.get(&quot;/users/{user_id}&quot;)
+def user_get(user_id: int, session=Depends(get_session)) -&gt; UserShow:
+    user = session.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail=&quot;User not found&quot;)
+    return user
+
+
+@user_router.delete(&quot;/users/delete/{travel_id}&quot;)
+def traveltogether_delete(user_id: int, session=Depends(get_session)):
+    user = session.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail=&quot;user not found&quot;)
+    session.delete(user)
+    session.commit()
+    return {&quot;ok&quot;: True}
+</code></pre>
+<p>location_endpoints</p>
+<hr>
+
+<pre><code>@location_router.post(&quot;/area-create&quot;)
+def area_create(area: AreaBase, session=Depends(get_session)) \
+        -&gt; TypedDict('Response', {&quot;status&quot;: int,
+                                  &quot;data&quot;: Area}):
+    area = Area.model_validate(area)
+    session.add(area)
+    session.commit()
+    session.refresh(area)
+    return {&quot;status&quot;: 200, &quot;data&quot;: area}
+
+
+@location_router.get(&quot;/list-areas&quot;)
+def areas_list(session=Depends(get_session)) -&gt; list[Area]:
+    return session.query(Area).all()
+
+
+@location_router.get(&quot;/area/{area_id}&quot;,  response_model=AreaShow)
+def area_get(area_id: int, session=Depends(get_session)):
+    obj = session.get(Area, area_id)
+    if obj is None:
+        raise HTTPException(status_code=404, detail=&quot;subarea not found&quot;)
+    return obj
+
+
+@location_router.patch(&quot;/area/update/{area_id}&quot;)
+def area_update(area_id: int, area: AreaBase, session=Depends(get_session)) -&gt; Area:
+    db_area = session.get(Area, area_id)
+    if not db_area:
+        raise HTTPException(status_code=404, detail=&quot;area not found&quot;)
+
+    area_data = area.model_dump(exclude_unset=True)
+    for key, value in area_data.items():
+        setattr(db_area, key, value)
+    session.add(db_area)
+    session.commit()
+    session.refresh(db_area)
+    return db_area
+
+
+@location_router.delete(&quot;/area/delete/{area_id}&quot;)
+def area_delete(area_id: int, session=Depends(get_session)):
+    area = session.get(Area, area_id)
+    if not area:
+        raise HTTPException(status_code=404, detail=&quot;area not found&quot;)
+    session.delete(area)
+    session.commit()
+    return {&quot;ok&quot;: True}
+
+
+@location_router.post(&quot;/place-create&quot;)
+def place_create(place: PlaceBase, session=Depends(get_session)) \
+        -&gt; TypedDict('Response', {&quot;status&quot;: int,
+                                  &quot;data&quot;: Place}):
+    place = Place.model_validate(place)
+    session.add(place)
+    session.commit()
+    session.refresh(place)
+    return {&quot;status&quot;: 200, &quot;data&quot;: place}
+
+
+@location_router.get(&quot;/list-places-in-area/{area_id}&quot;)
+def places_list(area_id: int, session=Depends(get_session)) -&gt; list[Place]:
+    return session.query(Place).filter(Place.area_id == area_id).all()
+
+
+@location_router.get(&quot;/place/{place_id}&quot;,  response_model=PlaceShow)
+def place_get(place_id: int, session=Depends(get_session)):
+    obj = session.get(Place, place_id)
+    if obj is None:
+        raise HTTPException(status_code=404, detail=&quot;subplace not found&quot;)
+    return obj
+
+
+@location_router.patch(&quot;/place/update/{place_id}&quot;)
+def place_update(place_id: int, place: PlaceBase, session=Depends(get_session)) -&gt; Place:
+    db_place = session.get(place, place_id)
+    if not db_place:
+        raise HTTPException(status_code=404, detail=&quot;place not found&quot;)
+
+    place_data = place.model_dump(exclude_unset=True)
+    for key, value in place_data.items():
+        setattr(db_place, key, value)
+    session.add(db_place)
+    session.commit()
+    session.refresh(db_place)
+    return db_place
+
+
+@location_router.delete(&quot;/place/delete/{place_id}&quot;)
+def place_delete(place_id: int, session=Depends(get_session)):
+    place = session.get(Place, place_id)
+    if not place:
+        raise HTTPException(status_code=404, detail=&quot;place not found&quot;)
+    session.delete(place)
+    session.commit()
+    return {&quot;ok&quot;: True}
+</code></pre>
+<p>travel_endpoints</p>
+<hr>
+
+<pre><code>@travel_router.post(&quot;/travel-create&quot;)
+def travel_create(travel: TravelBase, session=Depends(get_session)) \
+        -&gt; TypedDict('Response', {&quot;status&quot;: int,
+                                  &quot;data&quot;: Travel}):
+    travel = Travel.model_validate(travel)
+    session.add(travel)
+    session.commit()
+    session.refresh(travel)
+    return {&quot;status&quot;: 200, &quot;data&quot;: travel}
+
+
+@travel_router.get(&quot;/list-travels&quot;)
+def travels_list(session=Depends(get_session)) -&gt; list[Travel]:
+    return session.query(Travel).all()
+
+
+@travel_router.get(&quot;/travel/{travel_id}&quot;,  response_model=TravelShow)
+def travel_get(travel_id: int, session=Depends(get_session)):
+    obj = session.get(Travel, travel_id)
+    if obj is None:
+        raise HTTPException(status_code=404, detail=&quot;subtravel not found&quot;)
+    return obj
+
+
+@travel_router.patch(&quot;/travel/update/{travel_id}&quot;)
+def travel_update(travel_id: int, travel: TravelBase, session=Depends(get_session)) -&gt; Travel:
+    db_travel = session.get(Travel, travel_id)
+    if not db_travel:
+        raise HTTPException(status_code=404, detail=&quot;travel not found&quot;)
+
+    travel_data = travel.model_dump(exclude_unset=True)
+    for key, value in travel_data.items():
+        setattr(db_travel, key, value)
+    session.add(db_travel)
+    session.commit()
+    session.refresh(db_travel)
+    return db_travel
+
+
+@travel_router.delete(&quot;/travel/delete/{travel_id}&quot;)
+def travel_delete(travel_id: int, session=Depends(get_session)):
+    travel = session.get(Travel, travel_id)
+    if not travel:
+        raise HTTPException(status_code=404, detail=&quot;travel not found&quot;)
+    session.delete(travel)
+    session.commit()
+    return {&quot;ok&quot;: True}
+
+
+@travel_router.post(&quot;/travel-together-create&quot;)
+def traveltogether_create(travel: TravelTogetherBase, session=Depends(get_session)) \
+        -&gt; TypedDict('Response', {&quot;status&quot;: int,
+                                  &quot;data&quot;: TravelTogether}):
+    travel = TravelTogether.model_validate(travel)
+    session.add(travel)
+    session.commit()
+    session.refresh(travel)
+    return {&quot;status&quot;: 200, &quot;data&quot;: travel}
+
+
+@travel_router.get(&quot;/list-traveltogethers&quot;)
+def traveltogethers_list(session=Depends(get_session)) -&gt; list[TravelTogether]:
+    return session.query(TravelTogether).all()
+
+
+@travel_router.get(&quot;/traveltogether/{travel_id}&quot;,  response_model=TravelTogetherShow)
+def traveltogether_get(travel_id: int, session=Depends(get_session)):
+    obj = session.get(TravelTogether, travel_id)
+    if obj is None:
+        raise HTTPException(status_code=404, detail=&quot;travel not found&quot;)
+    return obj
+
+
+@travel_router.patch(&quot;/traveltogether/update/{travel_id}&quot;)
+def traveltogether_update(travel_id: int, travel: TravelTogetherBase, session=Depends(get_session)) -&gt; TravelTogether:
+    db_travel = session.get(TravelTogether, travel_id)
+    if not db_travel:
+        raise HTTPException(status_code=404, detail=&quot;travel not found&quot;)
+
+    travel_data = travel.model_dump(exclude_unset=True)
+    for key, value in travel_data.items():
+        setattr(db_travel, key, value)
+    session.add(db_travel)
+    session.commit()
+    session.refresh(db_travel)
+    return db_travel
+
+
+@travel_router.delete(&quot;/traveltogether/delete/{travel_id}&quot;)
+def traveltogether_delete(travel_id: int, session=Depends(get_session)):
+    travel = session.get(TravelTogether, travel_id)
+    if not travel:
+        raise HTTPException(status_code=404, detail=&quot;travel not found&quot;)
+    session.delete(travel)
+    session.commit()
+    return {&quot;ok&quot;: True}
+</code></pre>
+<p>Визуализация операций при помощи библиотеки swagger:
+Locations
+<img alt="alt text" src="../image-1.png" />
+Travels</p>
+<hr>
+
+<p><img alt="alt text" src="../image.png" />
+Auth</p>
+<hr>
+
+<p><img alt="alt text" src="../image-2.png" />
+Users</p>
+<hr>
+
+<p><img alt="alt text" src="../image-3.png" />
+Визуализация базы данных в PGAdmin </p>
+<hr>
+
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p>Также контролируем все изменения в базе данных при помощи библиотеки alembic</p>
+<hr>
+
+<p><img alt="alt text" src="../image-5.png" /></p>
+<h2 id="_6">Вывод</h2>
+<p>В ходе работы было написано API с авторизацией и CRUD-операциями на фреймворке FastAPI</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Навигация по странице">
+        <a href="../lab2/" class="btn btn-neutral float-right" title="lab2">Вперед <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Собрано в <a href="https://www.mkdocs.org/">MkDocs</a> с использованием <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы</a> от <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Версии">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="../lab2/" style="color: #fcfcfc">Вперед &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

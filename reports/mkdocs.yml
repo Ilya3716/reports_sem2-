@@ -1,0 +1,16 @@
+site_name: Samarov Ilya
+
+theme:
+  locale: ru
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+
+nav:
+  - lab1: lab1.md
+  - lab2: lab2.md
+  - lab3: lab3.md
+
+
